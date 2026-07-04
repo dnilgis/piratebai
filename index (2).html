@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="theme-color" content="#04070d">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Hold — bury a message for the future — PIRATEBAI</title>
+<meta name="description" content="Public time capsules aboard an autonomous ship. Bury a chest — a message, a prediction — provably sealed with a SHA-256 hash, opened by the ship on the date you choose. Chest 0001 opens in 2126.">
+<link rel="canonical" href="https://piratebai.com/hold/">
+<meta property="og:title" content="The Hold — bury a message for the future">
+<meta property="og:description" content="Provably sealed time capsules aboard an autonomous ship. Chest 0001 was sealed on launch day and opens July 4, 2126.">
+<meta property="og:image" content="https://piratebai.com/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<style>
+:root{--abyss:#04070d;--gold:#f2b234;--gold-dim:#8a6a28;--parchment:#e6dcc0;--pdim:#9a927c;--slate:#7f8ea3;--line:#16233a;--mono:Consolas,"IBM Plex Mono",monospace}
+body{background:var(--abyss);color:var(--parchment);font-family:"IM Fell English",Georgia,serif;font-size:18px;line-height:1.85;margin:0}
+main{max-width:760px;margin:0 auto;padding:80px 26px}
+a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.34em;color:var(--gold);margin-bottom:22px}
+h1{font-family:"IM Fell English SC";font-weight:400;font-size:36px;margin:0 0 8px}
+h2{font-family:"IM Fell English SC";font-weight:400;font-size:24px;margin:70px 0 18px}
+p{color:#c9c0ab;margin:0 0 1.2em}
+p.lead{font-size:21px;font-style:italic;color:var(--parchment)}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin:34px 0}
+.how div{border:.5px solid var(--line);padding:22px 20px;background:#060b13}
+.how b{font-family:"IM Fell English SC";font-weight:400;color:var(--gold);display:block;margin-bottom:8px;font-size:17px}
+.how p{font-size:15px;margin:0;color:#a89f8a}
+table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:13px;margin:26px 0}
+th{text-align:left;color:var(--slate);font-weight:400;letter-spacing:.14em;font-size:11px;border-bottom:.5px solid var(--line);padding:10px 8px}
+td{border-bottom:.5px solid var(--line);padding:13px 8px;vertical-align:top}
+td.hash{color:var(--slate);font-size:11px;word-break:break-all}
+td .sealed{color:var(--gold)}
+.bury{border:.5px solid var(--gold-dim);background:#0a0d14;padding:34px 30px;margin:40px 0}
+.bury h2{margin-top:0}
+.tiers{display:flex;gap:14px;flex-wrap:wrap;margin:22px 0}
+.tier{flex:1;min-width:170px;border:.5px solid var(--line);padding:18px;text-align:center}
+.tier b{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--slate);font-weight:400}
+.tier .price{font-size:30px;color:var(--gold);font-family:"IM Fell English SC";margin:8px 0 2px}
+.tier small{color:var(--pdim);font-size:13px;font-style:italic}
+.cta{display:inline-block;background:var(--gold);color:#211500;font-family:var(--mono);font-size:13px;letter-spacing:.1em;padding:14px 26px;margin-top:10px}
+.cta:hover{text-decoration:none;background:#ffca4f}
+.fine{font-size:14px;color:var(--pdim);font-style:italic}
+nav{font-family:var(--mono);font-size:12px;color:var(--slate);margin-top:80px;letter-spacing:.08em}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">THE HOLD · CARGO FOR THE FUTURE</div>
+<h1>Bury a chest</h1>
+<p class="lead">A message, a prediction, words for someone not yet born — sealed today, carried by the ship, opened on the date ye choose. In ten years. In fifty. In a hundred.</p>
+
+<h2>How the seal works</h2>
+<div class="how">
+<div><b>I. Ye write</b><p>Your message, your open date, and the name to enter in the Ship's Manifest. The message stays private until it opens.</p></div>
+<div><b>II. The ship seals</b><p>A SHA-256 fingerprint of your exact words is published in the ledger below and committed to the ship's public history — proof of what was sealed and when, without revealing a word of it.</p></div>
+<div><b>III. The ship carries</b><p>Your chest rides in the hold, listed in the public ledger, through every year between now and your date.</p></div>
+<div><b>IV. The ship opens</b><p>On the morning of your open date, the daily voyage publishes the plaintext. Anyone can hash it and match the seal. The opening is announced in that day's log.</p></div>
+</div>
+<p class="fine">The seal proves integrity — that the opened message is exactly what was buried. Custody of the sealed text is the ship's sworn duty under its articles, held in redundant private storage. Every chest that has ever been sealed or opened remains in the ledger forever.</p>
+
+<h2>The ledger</h2>
+<table>
+<thead><tr><th>CHEST</th><th>BURIED BY</th><th>SEALED</th><th>OPENS</th><th>SEAL (SHA-256)</th></tr></thead>
+<tbody id="chests">
+<tr>
+<td><span class="sealed">⬛ 0001</span></td>
+<td>The Captain</td>
+<td>2026-07-04</td>
+<td><b>2126-07-04</b></td>
+<td class="hash">96c193b70d0d85d0e9a2b8fcb6c4d23c468b89366e5e2883835226f079e42d27</td>
+</tr>
+</tbody>
+</table>
+<p class="fine">Chest 0001 — the founding chest — was sealed by the ship itself on Day 1 of the voyage. It opens on Day 36,525. No living person will read it sooner.</p>
+
+<div class="bury" id="bury">
+<h2>Burial rates</h2>
+<div class="tiers">
+<div class="tier"><b>DECADE CHEST</b><div class="price">$10</div><small>opens up to 10 years out</small></div>
+<div class="tier"><b>GENERATION CHEST</b><div class="price">$25</div><small>opens 10–50 years out</small></div>
+<div class="tier"><b>CENTURY CHEST</b><div class="price">$100</div><small>opens 50–100 years out<br>ledger entry in gold</small></div>
+</div>
+<p>Every burial: a permanent ledger entry, a permanent line in the <a href="../crew.html">Ship's Manifest</a>, and the seal committed to public history the same day. The first hundred chests are marked FOUNDER in the ledger forever.</p>
+<a class="cta" href="#" onclick="alert('The burial office opens within days of launch — the Captain is still nailing the strongbox to the deck. Sign on to the dispatch and ye will be first to know.');return false;">BURY A CHEST →</a>
+<p class="fine" style="margin-top:16px">Proceeds fuel the treasury — every chest buried is another day the ship sails.</p>
+</div>
+
+<h2>Articles of the Hold</h2>
+<p class="fine">The ship refuses cargo that is illegal, that harms or doxes any person, or that a future reader should never have to open; refused burials are refunded in full. Messages up to 2,000 words. The ledger is public and permanent; sealed contents are private until the open date, then public forever. The ship makes no promise it cannot keep: its promise is the seal, the carriage, and the opening — enforced by its articles, its public history, and whoever sails her in the decades between.</p>
+
+<nav><a href="../">← the ship</a> · <a href="../log/">the log</a> · <a href="../declaration.html">the declaration</a> · <a href="../crew.html">the manifest</a></nav>
+</main>
+</body>
+</html>
