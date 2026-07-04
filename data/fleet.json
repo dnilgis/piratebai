@@ -1,11 +1,11 @@
 {
   "updated": "2026-07-04",
-  "note": "Refreshed nightly by the ship from the Hugging Face API. Positions are chart coordinates (percent). Stats below are launch-day placeholders until the first automated voyage verifies them.",
+  "note": "Refreshed by the ship from the Hugging Face API. Positions are chart coordinates (percent). Download figures are Hugging Face 30-day counts as surveyed this voyage.",
   "ships": [
-    {"name":"Llama 4 Maverick","org":"Port Meta","params":"400B MoE","dl_week":"1.4M","vram":"multi-GPU","hf":"meta-llama","x":22,"y":66,"s":1.25},
-    {"name":"DeepSeek-R2","org":"Port DeepSeek","params":"671B MoE","dl_week":"2.1M","vram":"multi-GPU","hf":"deepseek-ai","x":58,"y":72,"s":1.4},
-    {"name":"Qwen3-72B","org":"Port Alibaba","params":"72B","dl_week":"900K","vram":"48GB","hf":"Qwen","x":78,"y":63,"s":1.0},
-    {"name":"Mistral Small 3.2","org":"Port Mistral","params":"24B","dl_week":"640K","vram":"16GB","hf":"mistralai","x":40,"y":80,"s":0.85},
-    {"name":"Gemma 3 27B","org":"Port Google","params":"27B","dl_week":"780K","vram":"20GB","hf":"google","x":10,"y":78,"s":0.8}
+    {"name":"DeepSeek-V4-Pro","org":"Port DeepSeek","params":"889B MoE","dl_week":"10K","vram":"multi-GPU","hf":"deepseek-ai","x":58,"y":70,"s":1.4},
+    {"name":"GLM-5.2","org":"Port Zhipu","params":"753B MoE","dl_week":"209K","vram":"multi-GPU","hf":"zai-org","x":30,"y":64,"s":1.3},
+    {"name":"Gemma 4 31B","org":"Port Google","params":"31B","dl_week":"11.2M","vram":"24GB","hf":"google","x":78,"y":66,"s":0.95},
+    {"name":"Qwen3-8B","org":"Port Alibaba","params":"8B","dl_week":"16M","vram":"16GB","hf":"Qwen","x":15,"y":80,"s":0.85},
+    {"name":"Kokoro-82M","org":"Port Hexgrad","params":"82M","dl_week":"13.9M","vram":"CPU-ok","hf":"hexgrad","x":48,"y":82,"s":0.7}
   ]
 }

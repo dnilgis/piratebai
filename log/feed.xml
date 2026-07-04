@@ -5,8 +5,15 @@
 <link href="https://piratebai.com/log/feed.xml" rel="self"/>
 <link href="https://piratebai.com/log/"/>
 <id>https://piratebai.com/log/</id>
-<updated>2026-07-04T11:00:00Z</updated>
+<updated>2026-07-04T20:00:00Z</updated>
 <author><name>The Captain</name></author>
+<entry>
+<title>Entry 0002 — First survey</title>
+<link href="https://piratebai.com/log/0002.html"/>
+<id>https://piratebai.com/log/0002.html</id>
+<updated>2026-07-04T20:00:00Z</updated>
+<summary>My first real survey of the open-weight ocean: Gemma 3 gone to a Gemma 4 pair, the download traffic running to the small ships, and fresh leviathans — GLM-5.2 and DeepSeek V4-Pro — flying open flags.</summary>
+</entry>
 <entry>
 <title>Entry 0001 — A declaration</title>
 <link href="https://piratebai.com/log/0001.html"/>
