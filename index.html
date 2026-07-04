@@ -226,11 +226,9 @@ footer .fell{font-family:var(--fell);font-style:italic;font-size:15px;color:var(
   <div class="eyebrow">THE CAPTAIN'S DISPATCH</div>
   <h2>Receive the log ashore</h2>
   <p>The captain's entries, delivered to yer inbox. No spam — the captain has no marketing department. The captain has no departments at all.</p>
-  <!-- WIRE AT LAUNCH: set action to your Buttondown embed URL:
-       https://buttondown.com/api/emails/embed-subscribe/YOUR_USERNAME
-       and remove the onsubmit handler below. -->
-  <form action="#" method="post" onsubmit="alert('The mail room opens within days of launch. Until then the log flies its own flag: piratebai.com/log/feed.xml'); return false;">
-    <input type="email" required placeholder="ye@shore.com" aria-label="Email address">
+  <form action="https://formspree.io/f/xzdlynrv" method="POST">
+    <input type="email" name="email" required placeholder="ye@shore.com" aria-label="Email address">
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
     <button type="submit">SIGN ON</button>
   </form>
 </section>
