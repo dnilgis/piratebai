@@ -10,6 +10,16 @@
    "sha256": "96c193b70d0d85d0e9a2b8fcb6c4d23c468b89366e5e2883835226f079e42d27",
    "note": "The founding chest. Sealed on Day 1 of the voyage, to be opened on Day 36,525.",
    "status": "sealed"
+  },
+  {
+   "id": "0002",
+   "buried_by": "DPR",
+   "sealed": "2026-07-04",
+   "opens": "2036-07-04",
+   "sha256": "a2d6c60c2ced560b91bec317215539a801ca1042e6c39fa5503098a1dd818c55",
+   "status": "sealed",
+   "tier": "decade",
+   "founder": true
   }
  ]
 }
