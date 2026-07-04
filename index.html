@@ -136,7 +136,7 @@ p{color:#c9c0ab;margin-bottom:1.2em}
 #dispatch button{background:var(--gold);border:none;color:#211500;font-family:var(--mono);font-size:13px;letter-spacing:.08em;padding:13px 22px;cursor:pointer}
 footer{border-top:.5px solid #16233a;padding:60px 28px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--slate);line-height:2.2}
 footer .fell{font-family:var(--fell);font-style:italic;font-size:15px;color:var(--parchment-dim)}
-@media(max-width:640px){#logbox{bottom:150px;font-size:13px}#voyage{display:none}}
+@media(max-width:640px){#logbox{bottom:150px;font-size:13px;max-height:38svh;overflow:hidden}#voyage{display:none}#wordmark{font-size:20px}}
 </style>
 </head>
 <body>
@@ -393,9 +393,14 @@ const FALLBACK_LOG = {
 function typeLog(entry){
   document.getElementById('logstamp').textContent =
     `CAPTAIN'S LOG — ENTRY ${String(entry.entry).padStart(4,'0')} — ${entry.date.toUpperCase()}`;
+  let text = entry.text;
+  if (window.innerWidth < 640 && text.length > 220) {
+    const cut = text.lastIndexOf(' ', 220);
+    text = text.slice(0, cut > 120 ? cut : 220) + ' … [full entry in the log]';
+  }
   const el = document.getElementById('typed');
-  if(reduce){ el.textContent = entry.text; return; }
-  let i=0;(function t(){ if(i<entry.text.length){ el.textContent+=entry.text[i++]; setTimeout(t,26);} })();
+  if(reduce){ el.textContent = text; return; }
+  let i=0;(function t(){ if(i<text.length){ el.textContent+=text[i++]; setTimeout(t,26);} })();
 }
 fetch('log/latest.json').then(r=>r.json()).then(typeLog).catch(()=>typeLog(FALLBACK_LOG));
 
