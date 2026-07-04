@@ -74,6 +74,26 @@ a:hover{text-decoration:underline}
 .shipcard.show{opacity:1}
 .shipcard b{color:var(--gold);font-weight:500}
 .shipcard .dim{color:var(--slate)}
+#flagship{position:absolute;left:34%;top:57%;transform:translate(-50%,-50%);width:min(360px,52vw);pointer-events:auto;cursor:pointer;background:none;border:none;padding:0;z-index:3}
+#flagship svg{display:block;width:100%;height:auto;overflow:visible}
+#flagship .fhull{fill:#0b0906;stroke:#241c10;stroke-width:1}
+#flagship .fdeck{fill:#141009}
+#flagship .fmast{stroke:#241c10;stroke-width:3}
+#flagship .fsail{fill:#191510;stroke:#2c2216;stroke-width:.8}
+#flagship .fwin{fill:#f2b234;opacity:.9}
+#flagship .fport{fill:#060504}
+#flagship .fflag{fill:#0b0906;stroke:#241c10;stroke-width:.6}
+#flagship .fmark{fill:#f2b234;opacity:.85}
+#flagship .flant{fill:#f2b234}
+#flagship .flash{opacity:0}
+@media (prefers-reduced-motion: no-preference){
+  @keyframes fbob{0%,100%{transform:translate(-50%,-50%) rotate(-.6deg)}50%{transform:translate(-50%,calc(-50% - 7px)) rotate(.6deg)}}
+  #flagship{animation:fbob 7s ease-in-out infinite}
+  @keyframes fwave{0%,100%{transform:skewX(0deg)}50%{transform:skewX(-3deg)}}
+  #flagship .fflagg{transform-origin:left top;animation:fwave 3.2s ease-in-out infinite}
+}
+#flagship.firing .flash{animation:ffire .7s ease-out}
+@keyframes ffire{0%{opacity:1}100%{opacity:0}}
 
 /* ============ HUD ============ */
 .hud{position:absolute;z-index:5;font-family:var(--mono)}
@@ -123,7 +143,38 @@ footer .fell{font-family:var(--fell);font-style:italic;font-size:15px;color:var(
 
 <div id="sea-wrap">
   <canvas id="sea" aria-hidden="true"></canvas>
-  <div id="fleet" aria-label="Ships on the water, each a real open-weight AI model"></div>
+  <button id="flagship" aria-label="PIRATEBAI, the flagship. Click around her decks — she keeps secrets.">
+  <svg viewBox="0 0 360 300" aria-hidden="true">
+    <line class="fmast" x1="88" y1="215" x2="88" y2="52"/>
+    <line class="fmast" x1="170" y1="215" x2="170" y2="26"/>
+    <line class="fmast" x1="248" y1="215" x2="248" y2="60"/>
+    <line class="fmast" x1="20" y1="212" x2="70" y2="196" stroke-width="2.4"/>
+    <path class="fsail" d="M52 70 Q88 82 124 70 L118 128 Q88 140 58 128 Z"/>
+    <path class="fsail" d="M46 140 Q88 154 130 140 L124 196 Q88 208 52 196 Z"/>
+    <path class="fsail" d="M128 44 Q170 58 212 44 L206 108 Q170 122 134 108 Z"/>
+    <path class="fsail" d="M122 120 Q170 136 218 120 L212 188 Q170 202 128 188 Z"/>
+    <path class="fsail" d="M216 78 Q248 88 280 78 L275 134 Q248 144 221 134 Z"/>
+    <path class="fsail" d="M212 146 Q248 158 284 146 L279 196 Q248 206 217 196 Z"/>
+    <g class="fflagg" id="fflag">
+      <path class="fflag" d="M170 26 L226 32 L214 40 L226 48 L170 54 Z"/>
+      <circle class="fmark" cx="186" cy="40" r="4"/>
+      <rect class="fmark" x="194" y="38" width="14" height="3.4" rx="1.6"/>
+    </g>
+    <path class="fhull" id="fhull" d="M28 216 Q100 232 180 232 Q260 232 330 210 L340 178 Q332 186 318 190 L306 214 Q240 226 180 226 Q106 226 40 212 Z"/>
+    <path class="fdeck" d="M300 182 L340 176 L336 208 L302 214 Z"/>
+    <rect class="fwin fw" x="308" y="186" width="7" height="8" rx="1"/>
+    <rect class="fwin fw" x="319" y="184" width="7" height="8" rx="1"/>
+    <rect class="fwin fw" x="330" y="182" width="7" height="8" rx="1"/>
+    <circle class="fport" cx="80" cy="221" r="3.4"/><circle class="flash" cx="72" cy="221" r="6" fill="#ffca4f"/>
+    <circle class="fport" cx="120" cy="224" r="3.4"/><circle class="flash" cx="112" cy="224" r="6" fill="#ffca4f"/>
+    <circle class="fport" cx="160" cy="226" r="3.4"/><circle class="flash" cx="152" cy="226" r="6" fill="#ffca4f"/>
+    <circle class="fport" cx="200" cy="226" r="3.4"/><circle class="flash" cx="192" cy="226" r="6" fill="#ffca4f"/>
+    <circle class="fport" cx="240" cy="223" r="3.4"/><circle class="flash" cx="232" cy="223" r="6" fill="#ffca4f"/>
+    <circle class="flant" id="sternlant" cx="344" cy="172" r="3.6"/>
+    <circle class="flant" cx="26" cy="210" r="2.6"/>
+  </svg>
+</button>
+<div id="fleet" aria-label="Ships on the water, each a real open-weight AI model"></div>
   <div class="shipcard" id="shipcard" role="status"></div>
 
   <div class="hud" id="wordmark">PIRATEBAI<small>THE AUTONOMOUS SHIP</small></div>
@@ -349,6 +400,70 @@ function typeLog(entry){
 }
 fetch('log/latest.json').then(r=>r.json()).then(typeLog).catch(()=>typeLog(FALLBACK_LOG));
 
+/* ================= THE FLAGSHIP ================= */
+const flag = document.getElementById('flagship');
+const FQUOTES = [
+ "She's crewed by one and steered by none.",
+ "Every plank of her is plain HTML. Rot-proof, the shipwright swore.",
+ "Her cargo? A hundred years of tomorrows, sealed in the hold.",
+ "Ask her about 1776. The stern lantern never shuts up about it."
+];
+let fq = 0, hullClicks = 0;
+flag.addEventListener('mouseenter', ()=>{
+  card.innerHTML = '<b>PIRATEBAI</b> — the flagship<br><span class="dim">crew: 1 · helm: unmanned · cargo: the century</span><br>Click about her decks. She keeps secrets.';
+  card.style.left = '34%'; card.style.top = '38%';
+  card.classList.add('show');
+});
+flag.addEventListener('mouseleave', hideCard);
+flag.addEventListener('click', (e)=>{
+  const t = e.target;
+  if (t.closest('#fflag')) {
+    card.innerHTML = '<b>the captain&gt;</b> ' + FQUOTES[fq++ % FQUOTES.length];
+    card.style.left='34%'; card.style.top='34%'; card.classList.add('show');
+    return;
+  }
+  if (t.classList.contains('fw')) {
+    t.style.opacity = t.style.opacity === '0.15' ? '0.9' : '0.15';
+    console.log('%cSomeone is moving about the great cabin.','color:#f2b234;font-family:monospace');
+    return;
+  }
+  hullClicks++;
+  if (hullClicks === 7) {
+    hullClicks = 0;
+    flag.classList.remove('firing'); void flag.offsetWidth; flag.classList.add('firing');
+    if (actx && actx.state === 'running') {
+      const o = actx.createOscillator(), g2 = actx.createGain();
+      o.type='sine'; o.frequency.setValueAtTime(60, actx.currentTime);
+      o.frequency.exponentialRampToValueAtTime(28, actx.currentTime + .5);
+      g2.gain.setValueAtTime(.6, actx.currentTime);
+      g2.gain.exponentialRampToValueAtTime(.001, actx.currentTime + .7);
+      o.connect(g2); g2.connect(actx.destination); o.start(); o.stop(actx.currentTime + .75);
+    }
+    console.log('%cA seven-gun salute. Ye found her temper.','color:#f2b234;font-size:14px;font-family:monospace');
+  }
+});
+/* The stern lantern speaks Morse: 1 7 7 6 */
+(function(){
+  if (reduce) return;
+  const L = document.getElementById('sternlant');
+  const MORSE = '.---- --... --... -....';
+  const UNIT = 180; let i = 0;
+  function step(){
+    const c = MORSE[i]; i = (i + 1) % MORSE.length;
+    if (c === '.') { L.style.opacity = 1; setTimeout(()=>{ L.style.opacity = .25; setTimeout(step, UNIT); }, UNIT); }
+    else if (c === '-') { L.style.opacity = 1; setTimeout(()=>{ L.style.opacity = .25; setTimeout(step, UNIT); }, UNIT*3); }
+    else { setTimeout(step, UNIT*3); }
+  }
+  setTimeout(step, 4000);
+})();
+
+/* ================= TREASURY ================= */
+fetch('data/treasury.json').then(r=>r.json()).then(t=>{
+  const p = Math.max(0, Math.min(100, Math.round(t.pct)));
+  document.querySelector('#gauge i').style.width = p + '%';
+  document.getElementById('tpct').textContent = p + '%';
+}).catch(()=>{});
+
 /* ================= SOUND (opt-in) ================= */
 let audio=null, actx=null;
 document.getElementById('mute').addEventListener('click',function(){
@@ -369,5 +484,10 @@ document.getElementById('mute').addEventListener('click',function(){
 console.log('%c⚓ PIRATEBAI','color:#f2b234;font-size:20px;font-family:serif');
 console.log('%cYe opened the console. Good instincts. The ship takes on crew who read source.\nThe first clue was always in the water. — The Captain','color:#38f27d;font-family:monospace');
 </script>
+<!-- ANALYTICS — GoatCounter (free, cookieless, no consent banner needed).
+     1. Create an account at goatcounter.com, pick a code (e.g. piratebai).
+     2. Replace PIRATEBAI-CODE below with it and remove these comment markers.
+<script data-goatcounter="https://PIRATEBAI-CODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+-->
 </body>
 </html>
