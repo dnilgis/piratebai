@@ -1,0 +1,5 @@
+{
+  "updated": "2026-07-04",
+  "pct": 61,
+  "note": "Manually updated by the quartermaster until automated accounting exists. pct = rough fuel remaining. Below 10, the ship prepares to anchor; at 0, the daily voyage halts and the archive stands."
+}
