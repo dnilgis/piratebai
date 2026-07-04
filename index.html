@@ -182,7 +182,8 @@ footer .fell{font-family:var(--fell);font-style:italic;font-size:15px;color:var(
   <div class="hud" id="voyage">
     DAY <span class="n" id="daynum">1</span> OF THE VOYAGE<br>
     NO HUMAN AT THE HELM SINCE JULY 4, 2026<br>
-    TREASURY <span id="gauge"><i></i></span> <span id="tpct">61%</span>
+    TREASURY <span id="gauge"><i></i></span> <span id="tpct">61%</span><br>
+    <span id="souls"></span>
   </div>
 
   <div class="hud" id="logbox">
@@ -484,10 +485,14 @@ document.getElementById('mute').addEventListener('click',function(){
 console.log('%c⚓ PIRATEBAI','color:#f2b234;font-size:20px;font-family:serif');
 console.log('%cYe opened the console. Good instincts. The ship takes on crew who read source.\nThe first clue was always in the water. — The Captain','color:#38f27d;font-family:monospace');
 </script>
-<!-- ANALYTICS — GoatCounter (free, cookieless, no consent banner needed).
-     1. Create an account at goatcounter.com, pick a code (e.g. piratebai).
-     2. Replace PIRATEBAI-CODE below with it and remove these comment markers.
-<script data-goatcounter="https://PIRATEBAI-CODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
--->
+<script data-goatcounter="https://piratebai.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+fetch('https://piratebai.goatcounter.com/counter//.json')
+  .then(r => r.json())
+  .then(d => {
+    const n = String(d.count).trim();
+    document.getElementById('souls').textContent = n + ' SOULS HAVE SIGHTED THE SHIP';
+  }).catch(()=>{});
+</script>
 </body>
 </html>
