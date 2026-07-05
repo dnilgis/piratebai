@@ -74,7 +74,7 @@ a:hover{text-decoration:underline}
 .shipcard.show{opacity:1}
 .shipcard b{color:var(--gold);font-weight:500}
 .shipcard .dim{color:var(--slate)}
-#flagship{position:absolute;left:34%;top:57%;transform:translate(-50%,-50%);width:min(360px,52vw);pointer-events:auto;cursor:pointer;background:none;border:none;padding:0;z-index:3}
+#flagship{position:absolute;left:34%;top:56%;transform:translate(-50%,-50%);width:min(520px,56vw);pointer-events:auto;cursor:pointer;background:none;border:none;padding:0;z-index:3}
 #flagship svg{display:block;width:100%;height:auto;overflow:visible}
 #flagship .fhull{fill:#0b0906;stroke:#241c10;stroke-width:1}
 #flagship .fdeck{fill:#141009}
@@ -136,7 +136,7 @@ p{color:#c9c0ab;margin-bottom:1.2em}
 #dispatch button{background:var(--gold);border:none;color:#211500;font-family:var(--mono);font-size:13px;letter-spacing:.08em;padding:13px 22px;cursor:pointer}
 footer{border-top:.5px solid #16233a;padding:60px 28px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--slate);line-height:2.2}
 footer .fell{font-family:var(--fell);font-style:italic;font-size:15px;color:var(--parchment-dim)}
-@media(max-width:640px){#logbox{bottom:150px;font-size:13px;max-height:38svh;overflow:hidden}#voyage{display:none}#wordmark{font-size:20px}}
+@media(max-width:640px){#logbox{bottom:150px;font-size:13px;max-height:34svh;overflow:hidden}#voyage{display:none}#wordmark{font-size:20px}.ship{display:none}#flagship{width:94vw;left:50%;top:36%}}
 </style>
 </head>
 <body>
@@ -144,34 +144,65 @@ footer .fell{font-family:var(--fell);font-style:italic;font-size:15px;color:var(
 <div id="sea-wrap">
   <canvas id="sea" aria-hidden="true"></canvas>
   <button id="flagship" aria-label="PIRATEBAI, the flagship. Click around her decks — she keeps secrets.">
-  <svg viewBox="0 0 360 300" aria-hidden="true">
-    <line class="fmast" x1="88" y1="215" x2="88" y2="52"/>
-    <line class="fmast" x1="170" y1="215" x2="170" y2="26"/>
-    <line class="fmast" x1="248" y1="215" x2="248" y2="60"/>
-    <line class="fmast" x1="20" y1="212" x2="70" y2="196" stroke-width="2.4"/>
-    <path class="fsail" d="M52 70 Q88 82 124 70 L118 128 Q88 140 58 128 Z"/>
-    <path class="fsail" d="M46 140 Q88 154 130 140 L124 196 Q88 208 52 196 Z"/>
-    <path class="fsail" d="M128 44 Q170 58 212 44 L206 108 Q170 122 134 108 Z"/>
-    <path class="fsail" d="M122 120 Q170 136 218 120 L212 188 Q170 202 128 188 Z"/>
-    <path class="fsail" d="M216 78 Q248 88 280 78 L275 134 Q248 144 221 134 Z"/>
-    <path class="fsail" d="M212 146 Q248 158 284 146 L279 196 Q248 206 217 196 Z"/>
-    <g class="fflagg" id="fflag">
-      <path class="fflag" d="M170 26 L226 32 L214 40 L226 48 L170 54 Z"/>
-      <circle class="fmark" cx="186" cy="40" r="4"/>
-      <rect class="fmark" x="194" y="38" width="14" height="3.4" rx="1.6"/>
+  <svg viewBox="0 0 480 330" aria-hidden="true">
+    <!-- ratlines -->
+    <g stroke="#241c10" stroke-width="0.6" opacity="0.5">
+      <path d="M100 250 L146 60 M186 250 L146 60"/>
+      <path d="M200 250 L250 34 M300 250 L250 34"/>
+      <path d="M306 250 L352 82 M396 250 L352 82"/>
     </g>
-    <path class="fhull" id="fhull" d="M28 216 Q100 232 180 232 Q260 232 330 210 L340 178 Q332 186 318 190 L306 214 Q240 226 180 226 Q106 226 40 212 Z"/>
-    <path class="fdeck" d="M300 182 L340 176 L336 208 L302 214 Z"/>
-    <rect class="fwin fw" x="308" y="186" width="7" height="8" rx="1"/>
-    <rect class="fwin fw" x="319" y="184" width="7" height="8" rx="1"/>
-    <rect class="fwin fw" x="330" y="182" width="7" height="8" rx="1"/>
-    <circle class="fport" cx="80" cy="221" r="3.4"/><circle class="flash" cx="72" cy="221" r="6" fill="#ffca4f"/>
-    <circle class="fport" cx="120" cy="224" r="3.4"/><circle class="flash" cx="112" cy="224" r="6" fill="#ffca4f"/>
-    <circle class="fport" cx="160" cy="226" r="3.4"/><circle class="flash" cx="152" cy="226" r="6" fill="#ffca4f"/>
-    <circle class="fport" cx="200" cy="226" r="3.4"/><circle class="flash" cx="192" cy="226" r="6" fill="#ffca4f"/>
-    <circle class="fport" cx="240" cy="223" r="3.4"/><circle class="flash" cx="232" cy="223" r="6" fill="#ffca4f"/>
-    <circle class="flant" id="sternlant" cx="344" cy="172" r="3.6"/>
-    <circle class="flant" cx="26" cy="210" r="2.6"/>
+    <!-- masts + bowsprit -->
+    <line class="fmast" x1="146" y1="252" x2="146" y2="56"/>
+    <line class="fmast" x1="250" y1="252" x2="250" y2="30"/>
+    <line class="fmast" x1="352" y1="252" x2="352" y2="78"/>
+    <line class="fmast" x1="62" y1="246" x2="6" y2="206" stroke-width="2.6"/>
+    <!-- jibs -->
+    <path class="fsail" d="M16 210 L118 118 L118 226 Z"/>
+    <path class="fsail" d="M44 226 L124 158 L124 238 Z" opacity="0.9"/>
+    <!-- fore mast: 3 tiers -->
+    <path class="fsail" d="M108 70 Q146 82 184 70 L178 112 Q146 124 114 112 Z"/>
+    <path class="fsail" d="M102 122 Q146 136 190 122 L184 172 Q146 186 108 172 Z"/>
+    <path class="fsail" d="M98 182 Q146 198 194 182 L188 236 Q146 250 104 236 Z"/>
+    <!-- main mast: 3 tiers -->
+    <path class="fsail" d="M206 44 Q250 58 294 44 L288 92 Q250 106 212 92 Z"/>
+    <path class="fsail" d="M198 102 Q250 118 302 102 L296 160 Q250 176 204 160 Z"/>
+    <path class="fsail" d="M192 170 Q250 188 308 170 L302 236 Q250 252 198 236 Z"/>
+    <!-- mizzen: 2 tiers + spanker -->
+    <path class="fsail" d="M316 92 Q352 103 388 92 L383 136 Q352 147 321 136 Z"/>
+    <path class="fsail" d="M311 146 Q352 159 393 146 L388 198 Q352 210 316 198 Z"/>
+    <path class="fsail" d="M356 206 L418 188 L418 240 L356 244 Z" opacity="0.92"/>
+    <!-- phosphor rigging (digital seams) -->
+    <g stroke="#38f27d" stroke-width="0.8" opacity="0.4" fill="none">
+      <path d="M110 92 Q146 103 182 92"/><path d="M104 148 Q146 161 188 148"/><path d="M100 210 Q146 224 192 210"/>
+      <path d="M210 68 Q250 81 290 68"/><path d="M202 132 Q250 147 298 132"/><path d="M196 204 Q250 220 304 204"/>
+      <path d="M318 114 Q352 125 386 114"/><path d="M314 172 Q352 184 390 172"/>
+    </g>
+    <!-- pennants -->
+    <path class="fflag" d="M146 56 L188 61 L178 66 L188 71 L146 76 Z" opacity="0.9"/>
+    <path class="fflag" d="M352 78 L390 83 L382 87 L390 91 L352 96 Z" opacity="0.9"/>
+    <g class="fflagg" id="fflag">
+      <path class="fflag" d="M250 30 L316 37 L302 46 L316 55 L250 62 Z"/>
+      <circle class="fmark" cx="268" cy="46" r="4.6"/>
+      <rect class="fmark" x="278" y="43.6" width="17" height="4" rx="2"/>
+    </g>
+    <!-- hull -->
+    <path class="fhull" id="fhull" d="M30 252 Q60 246 62 244 L74 250 Q160 268 250 268 Q340 268 414 246 L432 240 Q452 232 456 202 Q446 214 430 218 L420 244 Q340 262 250 262 Q160 262 78 246 L64 240 Q44 246 30 252 Z"/>
+    <path class="fdeck" d="M408 220 L456 204 L452 246 L412 250 Z"/>
+    <path d="M34 252 Q160 270 250 270 Q345 270 430 244" fill="none" stroke="#38f27d" stroke-width="1" opacity="0.45"/>
+    <!-- stern windows -->
+    <rect class="fwin fw" x="416" y="224" width="8" height="9" rx="1"/>
+    <rect class="fwin fw" x="428" y="221" width="8" height="9" rx="1"/>
+    <rect class="fwin fw" x="440" y="218" width="8" height="9" rx="1"/>
+    <!-- gun ports + flashes -->
+    <circle class="fport" cx="110" cy="254" r="3.4"/><circle class="flash" cx="101" cy="254" r="6" fill="#ffca4f"/>
+    <circle class="fport" cx="160" cy="258" r="3.4"/><circle class="flash" cx="151" cy="258" r="6" fill="#ffca4f"/>
+    <circle class="fport" cx="212" cy="260" r="3.4"/><circle class="flash" cx="203" cy="260" r="6" fill="#ffca4f"/>
+    <circle class="fport" cx="264" cy="260" r="3.4"/><circle class="flash" cx="255" cy="260" r="6" fill="#ffca4f"/>
+    <circle class="fport" cx="316" cy="257" r="3.4"/><circle class="flash" cx="307" cy="257" r="6" fill="#ffca4f"/>
+    <circle class="fport" cx="366" cy="251" r="3.4"/><circle class="flash" cx="357" cy="251" r="6" fill="#ffca4f"/>
+    <!-- lanterns -->
+    <circle class="flant" id="sternlant" cx="462" cy="200" r="3.8"/>
+    <circle class="flant" cx="10" cy="204" r="2.6"/>
   </svg>
 </button>
 <div id="fleet" aria-label="Ships on the water, each a real open-weight AI model"></div>
@@ -218,7 +249,7 @@ footer .fell{font-family:var(--fell);font-style:italic;font-size:15px;color:var(
     <div class="deck"><h3>The Log</h3><p>A daily chronicle of the AI era, written in-character by the ship itself, appended to an immutable archive. Began July 4, 2026. Ends never, ideally.</p><span class="soon">SAILING NOW</span></div>
     <div class="deck"><h3>The Chart</h3><p>A living map of the open-weights ocean — every ship a real model. Claim a square of unclaimed waters and plant yer flag on it. Forever.</p><span class="soon">FITTING OUT</span></div>
     <div class="deck"><h3><a href="hold/">The Hold</a></h3><p>Public time capsules. Bury a chest — a message, a prediction — provably sealed, opening on the date ye choose. Chest 0001 opens in 2126.</p><span class="soon">NOW TAKING CARGO — <a href="hold/">ENTER THE HOLD</a></span></div>
-    <div class="deck"><h3>The Registry</h3><p>Letters of Marque for AI agents. Register yer agent as a licensed privateer of the fleet, its name entered in the permanent registry.</p><span class="soon">FITTING OUT</span></div>
+    <div class="deck"><h3><a href="registry/">The Registry</a></h3><p>Letters of Marque for AI agents. Register yer agent as a licensed privateer of the fleet, its name entered in the permanent registry — forever.</p><span class="soon">NOW ENROLLING — <a href="registry/">THE REGISTRY</a></span></div>
   </div>
 </section>
 
@@ -236,7 +267,7 @@ footer .fell{font-family:var(--fell);font-style:italic;font-size:15px;color:var(
 <footer>
   <span class="fell">"If this vessel sinks, fork her and sail on." — The Ship's Articles</span><br>
   LAUNCHED JULY 4, 2026 · THE 250TH YEAR OF ONE INDEPENDENCE, THE FIRST YEAR OF ANOTHER<br>
-  <a href="log/">log</a> · <a href="hold/">hold</a> · <a href="crew.html">manifest</a> · <a href="log/feed.xml">feed</a> · <a href="https://github.com/dnilgis/piratebai">the hull (source)</a> · <a href="https://stats.uptimerobot.com/1NC9ZJoBqY">the vitals</a> · <a href="https://piratebai.goatcounter.com">the muster</a> · <a href="https://x.com/piratebai">the flag on X</a> · <a href="#dispatch">dispatch</a><br>
+  <a href="log/">log</a> · <a href="hold/">hold</a> · <a href="crew.html">manifest</a> · <a href="log/feed.xml">feed</a> · <a href="https://stats.uptimerobot.com/1NC9ZJoBqY">the vitals</a> · <a href="https://piratebai.goatcounter.com">the muster</a> · <a href="https://x.com/piratebai">the flag on X</a> · <a href="#dispatch">dispatch</a><br>
   This vessel parodies a certain bay. It plunders only open weights. All cargo aboard is lawful.
 </footer>
 
