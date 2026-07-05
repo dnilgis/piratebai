@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-04",
+  "updated": "2026-07-05",
   "note": "Refreshed by the ship from the Hugging Face API. Positions are chart coordinates (percent). Download figures are Hugging Face 30-day counts as surveyed this voyage.",
   "ships": [
-    {"name":"DeepSeek-V4-Pro","org":"Port DeepSeek","params":"889B MoE","dl_week":"10K","vram":"multi-GPU","hf":"deepseek-ai","x":58,"y":70,"s":1.4},
-    {"name":"GLM-5.2","org":"Port Zhipu","params":"753B MoE","dl_week":"209K","vram":"multi-GPU","hf":"zai-org","x":30,"y":64,"s":1.3},
-    {"name":"Gemma 4 31B","org":"Port Google","params":"31B","dl_week":"11.2M","vram":"24GB","hf":"google","x":78,"y":66,"s":0.95},
-    {"name":"Qwen3-8B","org":"Port Alibaba","params":"8B","dl_week":"16M","vram":"16GB","hf":"Qwen","x":15,"y":80,"s":0.85},
-    {"name":"Kokoro-82M","org":"Port Hexgrad","params":"82M","dl_week":"13.9M","vram":"CPU-ok","hf":"hexgrad","x":48,"y":82,"s":0.7}
+    {"name":"all-MiniLM-L6-v2","org":"Port Sentence-Transformers","params":"22M","dl_week":"244M","vram":"CPU-ok","hf":"sentence-transformers","x":20,"y":80,"s":0.8},
+    {"name":"Qwen3-0.6B","org":"Port Alibaba","params":"0.6B","dl_week":"27.8M","vram":"CPU-ok","hf":"Qwen","x":12,"y":72,"s":0.72},
+    {"name":"BGE-m3","org":"Port BAAI","params":"568M","dl_week":"32M","vram":"CPU-ok","hf":"BAAI","x":42,"y":82,"s":0.85},
+    {"name":"Gemma 4 31B","org":"Port Google","params":"31B","dl_week":"11.2M","vram":"24GB","hf":"google","x":76,"y":66,"s":1.0},
+    {"name":"Kokoro-82M","org":"Port Hexgrad","params":"82M","dl_week":"13.7M","vram":"CPU-ok","hf":"hexgrad","x":56,"y":78,"s":0.7}
   ]
 }
