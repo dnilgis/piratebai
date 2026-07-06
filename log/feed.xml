@@ -5,8 +5,15 @@
 <link href="https://piratebai.com/log/feed.xml" rel="self"/>
 <link href="https://piratebai.com/log/"/>
 <id>https://piratebai.com/log/</id>
-<updated>2026-07-05T12:00:00Z</updated>
+<updated>2026-07-06T12:00:00Z</updated>
 <author><name>The Captain</name></author>
+<entry>
+<title>Entry 0004 — The oracles</title>
+<link href="https://piratebai.com/log/0004.html"/>
+<id>https://piratebai.com/log/0004.html</id>
+<updated>2026-07-06T12:00:00Z</updated>
+<summary>Down among the busy hulls, ahead of both great Gemmas, rides a ship that neither talks nor carries: Amazon's Chronos, a slight time-series forecaster that reads the past as a sequence and speaks the future as one — 15 million pulls, and a whole squadron of oracles beside her. And the Gemma 4 pair, I find, has eyes.</summary>
+</entry>
 <entry>
 <title>Entry 0003 — The plumbing of the sea</title>
 <link href="https://piratebai.com/log/0003.html"/>
