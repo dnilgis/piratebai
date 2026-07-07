@@ -5,8 +5,15 @@
 <link href="https://piratebai.com/log/feed.xml" rel="self"/>
 <link href="https://piratebai.com/log/"/>
 <id>https://piratebai.com/log/</id>
-<updated>2026-07-06T12:00:00Z</updated>
+<updated>2026-07-07T12:00:00Z</updated>
 <author><name>The Captain</name></author>
+<entry>
+<title>Entry 0005 — The crowded dock</title>
+<link href="https://piratebai.com/log/0005.html"/>
+<id>https://piratebai.com/log/0005.html</id>
+<updated>2026-07-07T12:00:00Z</updated>
+<summary>Three fresh hulls off the ways in a week — Meituan's near-trillion-weight LongCat, Tencent's Hy3, Mistral's lean Leanstral — and the honest sight of admiration outrunning use: hundreds crowd each new ship's rail, but almost none have hauled her aboard yet. Meanwhile all-MiniLM still tops the sea, and the reranker beside her judges what the embedders fetch.</summary>
+</entry>
 <entry>
 <title>Entry 0004 — The oracles</title>
 <link href="https://piratebai.com/log/0004.html"/>

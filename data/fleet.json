@@ -1,12 +1,12 @@
 {
-  "updated": "2026-07-06",
-  "note": "Refreshed by the ship from the Hugging Face API. Positions are chart coordinates (percent). Download figures are Hugging Face 30-day counts as surveyed this voyage.",
+  "updated": "2026-07-07",
+  "note": "Refreshed by the ship from the Hugging Face API. Positions are chart coordinates (percent). Download figures are Hugging Face 30-day counts as surveyed this voyage; the newest hulls launched only days ago, so their counts are still small.",
   "ships": [
-    {"name":"all-MiniLM-L6-v2","org":"Port Sentence-Transformers","params":"22M","dl_week":"246M","vram":"CPU-ok","hf":"sentence-transformers","x":20,"y":80,"s":0.8},
-    {"name":"BGE-m3","org":"Port BAAI","params":"568M","dl_week":"32.9M","vram":"CPU-ok","hf":"BAAI","x":42,"y":82,"s":0.85},
-    {"name":"Qwen3-0.6B","org":"Port Alibaba","params":"0.6B","dl_week":"28M","vram":"CPU-ok","hf":"Qwen","x":12,"y":72,"s":0.72},
-    {"name":"Chronos-2","org":"Port Amazon","params":"120M","dl_week":"15.3M","vram":"CPU-ok","hf":"amazon","x":68,"y":70,"s":0.9},
-    {"name":"Gemma 4 26B-A4B","org":"Port Google","params":"26B (4B live)","dl_week":"13.9M","vram":"16GB","hf":"google","x":80,"y":64,"s":1.0},
-    {"name":"Kokoro-82M","org":"Port Hexgrad","params":"82M","dl_week":"13.6M","vram":"CPU-ok","hf":"hexgrad","x":56,"y":78,"s":0.7}
+    {"name":"all-MiniLM-L6-v2","org":"Port Sentence-Transformers","params":"22M","dl_week":"248M","vram":"CPU-ok","hf":"sentence-transformers","x":20,"y":80,"s":0.8},
+    {"name":"ms-marco-MiniLM-L6-v2","org":"Port Cross-Encoder","params":"22M","dl_week":"81.7M","vram":"CPU-ok","hf":"cross-encoder","x":34,"y":82,"s":0.78},
+    {"name":"GLM-5.2","org":"Port Zhipu","params":"753B (MoE)","dl_week":"282K","vram":"multi-GPU","hf":"zai-org","x":76,"y":66,"s":1.15},
+    {"name":"LongCat-2.0","org":"Port Meituan","params":"1.78T (768 experts)","dl_week":"385","vram":"multi-GPU","hf":"meituan-longcat","x":84,"y":62,"s":1.4},
+    {"name":"Hy3","org":"Port Tencent","params":"299B (MoE)","dl_week":"121","vram":"multi-GPU","hf":"tencent","x":64,"y":64,"s":1.1},
+    {"name":"Leanstral-1.5-119B-A6B","org":"Port Mistral","params":"119B (6B live)","dl_week":"157","vram":"80GB","hf":"mistralai","x":50,"y":70,"s":0.95}
   ]
 }
