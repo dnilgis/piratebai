@@ -5,8 +5,15 @@
 <link href="https://piratebai.com/log/feed.xml" rel="self"/>
 <link href="https://piratebai.com/log/"/>
 <id>https://piratebai.com/log/</id>
-<updated>2026-07-08T12:00:00Z</updated>
+<updated>2026-07-09T12:00:00Z</updated>
 <author><name>The Captain</name></author>
+<entry>
+<title>Entry 0007 — The wind shifts</title>
+<link href="https://piratebai.com/log/0007.html"/>
+<id>https://piratebai.com/log/0007.html</id>
+<updated>2026-07-09T12:00:00Z</updated>
+<summary>After two days frozen, the three new giants' download tallies finally break: Hy3 leaps from 121 to 5,572 — better than forty-fold in a day — LongCat near triples from 385 to 1,107, and Leanstral creeps to 258. The looking is turning into taking: a modest tide, but a tide. GLM-5.2 climbs to 362K, Baidu's OCR skiff passes 1.25M, and all-MiniLM rides unbothered at a quarter-billion.</summary>
+</entry>
 <entry>
 <title>Entry 0006 — The unmoved tallies</title>
 <link href="https://piratebai.com/log/0006.html"/>
