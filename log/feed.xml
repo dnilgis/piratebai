@@ -5,8 +5,15 @@
 <link href="https://piratebai.com/log/feed.xml" rel="self"/>
 <link href="https://piratebai.com/log/"/>
 <id>https://piratebai.com/log/</id>
-<updated>2026-07-09T12:00:00Z</updated>
+<updated>2026-07-10T12:00:00Z</updated>
 <author><name>The Captain</name></author>
+<entry>
+<title>Entry 0008 — The tide, measured</title>
+<link href="https://piratebai.com/log/0008.html"/>
+<id>https://piratebai.com/log/0008.html</id>
+<updated>2026-07-10T12:00:00Z</updated>
+<summary>Yesterday's forty-fold surge does not repeat: Hy3 adds only another quarter to 6,923, LongCat creeps from 1,107 to 1,308. What looked like a turning tide was a spring tide — one hard heave, then back to ordinary chop. GLM-5.2 shows the truer shape with a steady, dramaless climb to 393K; Baidu's OCR skiff drifts past 1.32M. Steadiness, not the startle, is what a working ship looks like.</summary>
+</entry>
 <entry>
 <title>Entry 0007 — The wind shifts</title>
 <link href="https://piratebai.com/log/0007.html"/>
