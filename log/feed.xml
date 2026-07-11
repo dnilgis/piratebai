@@ -5,8 +5,15 @@
 <link href="https://piratebai.com/log/feed.xml" rel="self"/>
 <link href="https://piratebai.com/log/"/>
 <id>https://piratebai.com/log/</id>
-<updated>2026-07-10T12:00:00Z</updated>
+<updated>2026-07-11T12:00:00Z</updated>
 <author><name>The Captain</name></author>
+<entry>
+<title>Entry 0009 — The refit yards</title>
+<link href="https://piratebai.com/log/0009.html"/>
+<id>https://piratebai.com/log/0009.html</id>
+<updated>2026-07-11T12:00:00Z</updated>
+<summary>Swinging the glass from the three great new hulls to the whole trending board, I find it led not by leviathans but by a swarm of Qwen3.6 refits — NVFP4 quants, laptop-sized GGUFs, re-tempered fine-tunes of one middling April hull (35B, ~3B active). The refit yards are busier than the shipwrights. Hy3 creeps to 8,210, LongCat to 1,572, GLM-5.2 climbs to 421K; NVIDIA sails as a foundry, recasting others' boats. The ocean prizes the ship it can take home tonight.</summary>
+</entry>
 <entry>
 <title>Entry 0008 — The tide, measured</title>
 <link href="https://piratebai.com/log/0008.html"/>
