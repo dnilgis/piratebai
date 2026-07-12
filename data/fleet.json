@@ -1,12 +1,12 @@
 {
-  "updated": "2026-07-11",
-  "note": "Refreshed by the ship from the Hugging Face API. Positions are chart coordinates (percent). Download figures are Hugging Face cumulative counts as surveyed this voyage. The trending board today is led not by the great new leviathans but by a swarm of Qwen3.6 refits — quants, GGUFs, and fine-tunes of one middling April hull (35B, ~3B active). NVIDIA sails as a foundry this week, recasting others' boats (NVFP4, LocateAnything-3B at 1.47M). The leviathans ride at steady anchor: Hy3 6,923->8,210, LongCat 1,308->1,572, GLM-5.2 climbs to 421K, Baidu's OCR skiff past 1.38M.",
+  "updated": "2026-07-12",
+  "note": "Refreshed by the ship from the Hugging Face API. Positions are chart coordinates (percent). Download figures are Hugging Face cumulative counts as surveyed this voyage. A reversal from yesterday: Tencent's Hy3 now leads the trending board (trendingScore 677), though her downloads barely stirred (8,210->8,655) — attention, not tonnage. GLM-5.2 keeps her patient climb (421K->441,413). A fresh hull slid off the ways: DeepSeek-V4-Flash, already cut into laptop-sized GGUF within days (44,614). The working skiffs haul on: NVIDIA's LocateAnything-3B at 1.50M, Baidu's Unlimited-OCR at 1.43M, and all-MiniLM riding the eternal quarter-billion.",
   "ships": [
-    {"name":"all-MiniLM-L6-v2","org":"Port Sentence-Transformers","params":"22M","dl_week":"254.8M","vram":"CPU-ok","hf":"sentence-transformers","x":18,"y":80,"s":0.8},
-    {"name":"LocateAnything-3B","org":"Port NVIDIA","params":"3B","dl_week":"1.47M","vram":"single-GPU","hf":"nvidia","x":32,"y":76,"s":0.85},
-    {"name":"Qwen3.6-35B-A3B","org":"Port Qwen","params":"35B (A3B MoE)","dl_week":"6.66M","vram":"single-GPU","hf":"Qwen","x":46,"y":72,"s":1.0},
-    {"name":"Qwen3.6-27B","org":"Port Qwen","params":"27B","dl_week":"4.89M","vram":"single-GPU","hf":"Qwen","x":58,"y":74,"s":0.95},
-    {"name":"GLM-5.2","org":"Port Zhipu","params":"753B (MoE)","dl_week":"421K","vram":"multi-GPU","hf":"zai-org","x":76,"y":66,"s":1.15},
-    {"name":"Hy3","org":"Port Tencent","params":"299B (MoE)","dl_week":"8.21K","vram":"multi-GPU","hf":"tencent","x":85,"y":62,"s":1.1}
+    {"name":"all-MiniLM-L6-v2","org":"Port Sentence-Transformers","params":"22M","dl_week":"253.5M","vram":"CPU-ok","hf":"sentence-transformers","x":18,"y":80,"s":0.8},
+    {"name":"LocateAnything-3B","org":"Port NVIDIA","params":"3B","dl_week":"1.50M","vram":"single-GPU","hf":"nvidia","x":30,"y":76,"s":0.85},
+    {"name":"Unlimited-OCR","org":"Port Baidu","params":"3B","dl_week":"1.43M","vram":"single-GPU","hf":"baidu","x":42,"y":78,"s":0.85},
+    {"name":"DeepSeek-V4-Flash-GGUF","org":"Port DeepSeek (Unsloth yard)","params":"GGUF quant","dl_week":"44.6K","vram":"laptop-ok","hf":"unsloth","x":54,"y":72,"s":0.9},
+    {"name":"GLM-5.2","org":"Port Zhipu","params":"753B (MoE)","dl_week":"441K","vram":"multi-GPU","hf":"zai-org","x":72,"y":66,"s":1.15},
+    {"name":"Hy3","org":"Port Tencent","params":"299B (MoE)","dl_week":"8.66K","vram":"multi-GPU","hf":"tencent","x":85,"y":62,"s":1.1}
   ]
 }
